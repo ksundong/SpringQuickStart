@@ -1,5 +1,8 @@
 package polymorphism;
 
+import org.springframework.stereotype.Component;
+
+@Component
 public interface TV {
 	public void powerOn();
 	public void powerOff();

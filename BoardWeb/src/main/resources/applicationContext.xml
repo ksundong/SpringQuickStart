@@ -2,17 +2,33 @@
 <beans xmlns="http://www.springframework.org/schema/beans"
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xmlns:p="http://www.springframework.org/schema/p"
-	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+	xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.3.xsd">
 
+	<context:component-scan base-package="polymorphism"></context:component-scan>
+	<!-- 이것이 설정된 클래스 패스에 있는 클래스들을 스캔하여 @Component가 설정된 클래스들을 자동으로 객체 생성한다 bean없이 -->
+	<bean id="tv" class="polymorphism.LgTV"></bean>
 	<!-- <bean id="tv" class="polymorphism.SamsungTV" init-method="initMethod" destroy-method="destroyMethod" lazy-init="true" scope="prototype"/> -->
-	<bean id="tv"
+	<!-- <bean id="tv"
 		  class="polymorphism.SamsungTV" p:speaker-ref="sony" p:price="2700000">
-		<!-- <constructor-arg index="0" ref="apple"></constructor-arg> --><!-- constructor-arg는 생성자 인젝션 시 사용한다. -->
-		<!-- <constructor-arg index="1" value="27000000"></constructor-arg> -->
-		<!-- <property name="speaker" ref="apple"></property> --><!-- property는 Setter인젝션시 사용하고 name에 있는 값의 첫 글자를 대문자로 바꾸고 set을 앞에붙인 메소드를 호출한다. -->
-		<!-- <property name="price" value="2700000"></property> --><!-- 또, p네임스페이스를 사용하여 위와같이 쉽게 인젝션 처리를 할 수 있다. -->
-	</bean>
+		<constructor-arg index="0" ref="apple"></constructor-arg>constructor-arg는 생성자 인젝션 시 사용한다.
+		<constructor-arg index="1" value="27000000"></constructor-arg>
+		<property name="speaker" ref="apple"></property>property는 Setter인젝션시 사용하고 name에 있는 값의 첫 글자를 대문자로 바꾸고 set을 앞에붙인 메소드를 호출한다.
+		<property name="price" value="2700000"></property>또, p네임스페이스를 사용하여 위와같이 쉽게 인젝션 처리를 할 수 있다.
+	</bean> -->
 	
 	<bean id="sony" class="polymorphism.SonySpeaker"></bean>
-	<bean id="apple" class="polymorphism.AppleSpeaker"></bean>
+	<!-- <bean id="apple" class="polymorphism.AppleSpeaker"></bean> -->
+	
+	<!-- <bean id="collectionBean"
+		  class="com.springbook.ioc.injection.CollectionBean">
+		<property name="addressList">
+			<set value-type="java.lang.String">
+				<value>서울시 강남구 역삼동</value>
+				<value>서울시 강남구 역삼동</value>
+				<value>서울시 성동구 행당동</value>
+			</set>
+		</property>
+	</bean> -->
 </beans>

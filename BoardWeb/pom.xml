@@ -15,11 +15,18 @@
 	</properties>
 	<dependencies>
 		<!-- MariaDB -->
-		<dependency>
+<!-- 		<dependency>
 		<groupId>org.mariadb.jdbc</groupId>
 		<artifactId>mariadb-java-client</artifactId>
 		<version>2.3.0</version>
-	</dependency>
+		</dependency> -->
+		<!-- H2 DataBase -->
+		<dependency>
+			<groupId>com.h2database</groupId>
+			<artifactId>h2</artifactId>
+			<version>1.4.197</version>
+		</dependency>
+		
 		<!-- Spring -->
 		<dependency>
 			<groupId>org.springframework</groupId>

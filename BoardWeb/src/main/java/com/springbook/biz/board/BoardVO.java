@@ -1,12 +1,14 @@
 package com.springbook.biz.board;
 
+import java.sql.Date;
+
 // VO(Value Object)
 public class BoardVO {
 	private int seq;
 	private String title;
 	private String writer;
 	private String content;
-	private String regDate;
+	private Date regDate;
 	private int cnt;
 	public int getSeq() {
 		return seq;
@@ -32,11 +34,11 @@ public class BoardVO {
 	public void setContent(String content) {
 		this.content = content;
 	}
-	public String getRegdate() {
+	public Date getRegdate() {
 		return regDate;
 	}
-	public void setRegdate(String regdate) {
-		this.regDate = regdate;
+	public void setRegdate(Date date) {
+		this.regDate = date;
 	}
 	public int getCnt() {
 		return cnt;

@@ -91,7 +91,7 @@ public class BoardDAO {
 				board.setTitle(rs.getString("TITLE"));
 				board.setWriter(rs.getString("WRITER"));
 				board.setContent(rs.getString("CONTENT"));
-				board.setRegdate(rs.getDate("REGDATE"));
+				board.setRegDate(rs.getDate("REGDATE"));
 				board.setCnt(rs.getInt("CNT"));
 			}
 		} catch (Exception e) {
@@ -102,9 +102,9 @@ public class BoardDAO {
 		return board;
 	}
 	
-	// 글 상세 조회
+	// 글 목록 조회
 	public List<BoardVO> getBoardList(BoardVO vo) {
-		System.out.println("===> JDBC로 getBoard() 기능 처리");
+		System.out.println("===> JDBC로 getBoardList() 기능 처리");
 		List<BoardVO> boardList = new ArrayList<BoardVO>(); 
 		try {
 			conn = JDBCUtil.getConnection();
@@ -116,7 +116,7 @@ public class BoardDAO {
 				board.setTitle(rs.getString("TITLE"));
 				board.setWriter(rs.getString("WRITER"));
 				board.setContent(rs.getString("CONTENT"));
-				board.setRegdate(rs.getDate("REGDATE"));
+				board.setRegDate(rs.getDate("REGDATE"));
 				board.setCnt(rs.getInt("CNT"));
 				boardList.add(board);
 			}

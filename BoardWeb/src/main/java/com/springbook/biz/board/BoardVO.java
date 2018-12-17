@@ -37,7 +37,7 @@ public class BoardVO {
 	public Date getRegdate() {
 		return regDate;
 	}
-	public void setRegdate(Date date) {
+	public void setRegDate(Date date) {
 		this.regDate = date;
 	}
 	public int getCnt() {

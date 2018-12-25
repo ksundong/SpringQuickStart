@@ -1,8 +1,10 @@
 package com.springbook.biz.common;
 
 import org.aspectj.lang.ProceedingJoinPoint;
+import org.springframework.stereotype.Service;
 import org.springframework.util.StopWatch;
 
+@Service
 public class AroundAdvice {
 	public Object aroundLog(ProceedingJoinPoint pjp) throws Throwable {
 		String method = pjp.getSignature().getName();

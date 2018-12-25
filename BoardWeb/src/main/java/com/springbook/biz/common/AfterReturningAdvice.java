@@ -1,9 +1,11 @@
 package com.springbook.biz.common;
 
 import org.aspectj.lang.JoinPoint;
+import org.springframework.stereotype.Service;
 
 import com.springbook.biz.user.UserVO;
 
+@Service
 public class AfterReturningAdvice {
 	public void afterLog(JoinPoint jp, Object returnObj) {
 		String method = jp.getSignature().getName();

@@ -11,11 +11,21 @@
 	<context:component-scan base-package="com.springbook.biz" />
 	
 	<bean id="afterThrowing" class="com.springbook.biz.common.AfterThrowingAdvice" />
+	<bean id="after" class="com.springbook.biz.common.AfterAdvice" />
+	<bean id="afterReturning" class="com.springbook.biz.common.AfterReturningAdvice" />
 	<aop:config>
 		<aop:pointcut id="allPointcut" expression="execution(* com.springbook.biz..*Impl.*(..))"/>
 		
 		<aop:aspect ref="afterThrowing">
 			<aop:after-throwing pointcut-ref="allPointcut" method="exceptionLog"/>
+		</aop:aspect>
+		
+		<aop:aspect ref="after">
+			<aop:after pointcut-ref="allPointcut" method="finallyLog"/>
+		</aop:aspect>
+		
+		<aop:aspect ref="afterReturning">
+			<aop:after pointcut-ref="allPointcut" method="afterLog"/>
 		</aop:aspect>
 	</aop:config>
 	

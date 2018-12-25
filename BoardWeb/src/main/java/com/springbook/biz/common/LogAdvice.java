@@ -4,10 +4,11 @@ import org.aspectj.lang.JoinPoint;
 
 public class LogAdvice {
 	public void printLog(JoinPoint jp) {
+		String method = jp.getSignature().getName();
 		Object[] args = jp.getArgs();
+		
 		for(int i = 0; i < args.length; i++) {
-			System.out.println(args.toString());
+			System.out.println("[사전 처리] " + method + "() 메소드 ARGS 정보 : " + args[i].toString());
 		}
-		System.out.println("[공통 로그] 비스니스 로직 수행 전 동작");
 	}
 }

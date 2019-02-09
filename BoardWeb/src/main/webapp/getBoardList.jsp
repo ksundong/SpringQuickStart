@@ -1,16 +1,10 @@
 <%@ page import="com.springbook.biz.board.BoardVO" %>
-<%@ page import="com.springbook.biz.board.Impl.BoardDAO" %>
 <%@ page import="java.util.List" %>
 <%@ page contentType="text/html;charset=UTF-8" %>
 
 <%
-	// 1. 사용자 입력 정보 추출(검색 기능은 나중에 구현)
-	// 2. DB 연동 처리
-	BoardVO vo = new BoardVO();
-	BoardDAO boardDAO = new BoardDAO();
-	List<BoardVO> boardList = boardDAO.getBoardList(vo);
-	
-	// 3. 응답 화면 구성
+	// 세션에 저장된 글 목록을 꺼낸다.
+	List<BoardVO> boardList = (List) session.getAttribute("boardList");
 %>
 
 <html>

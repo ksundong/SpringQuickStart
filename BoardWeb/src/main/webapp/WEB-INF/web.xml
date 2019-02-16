@@ -12,7 +12,7 @@
 
   <filter-mapping>
     <filter-name>characterEncoding</filter-name>
-    <url-pattern>.do</url-pattern>
+    <url-pattern>*.do</url-pattern>
   </filter-mapping>
 
   <servlet>

@@ -2,14 +2,12 @@ package com.springbook.view.board;
 
 import com.springbook.biz.board.BoardVO;
 import com.springbook.biz.board.Impl.BoardDAO;
-import com.springbook.view.controller.Controller;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-public class GetBoardController implements Controller {
-	@Override
+public class GetBoardController {
 	public String handleRequest(HttpServletRequest request, HttpServletResponse response) {
 		System.out.println("글 상세 조회 처리");
 		

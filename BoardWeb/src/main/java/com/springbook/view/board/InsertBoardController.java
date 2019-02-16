@@ -2,13 +2,11 @@ package com.springbook.view.board;
 
 import com.springbook.biz.board.BoardVO;
 import com.springbook.biz.board.Impl.BoardDAO;
-import com.springbook.view.controller.Controller;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-public class InsertBoardController implements Controller {
-	@Override
+public class InsertBoardController {
 	public String handleRequest(HttpServletRequest request, HttpServletResponse response) {
 		System.out.println("글 등록 처리");
 		

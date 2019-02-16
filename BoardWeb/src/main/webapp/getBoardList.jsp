@@ -15,7 +15,7 @@
 <body>
 <center>
 	<h1>글 목록</h1>
-	<h3>테스트님 환영합니다...<a href="logout_proc.jsp">Log-out</a></h3>
+	<h3>테스트님 환영합니다...<a href="logout.do">Log-out</a></h3>
 	
 	<!-- 검색 시작 -->
 	<form action="getBoardList.jsp" method="post">
@@ -46,7 +46,7 @@
 		<% for(BoardVO board : boardList) { %>
 		<tr>
 			<td><%= board.getSeq() %></td>
-			<td align="left"><a href="getBoard.jsp?seq=<%= board.getSeq() %>"><%= board.getTitle() %></a></td>
+			<td align="left"><a href="getBoard.do?seq=<%= board.getSeq() %>"><%= board.getTitle() %></a></td>
 			<td><%= board.getWriter() %></td>
 			<td><%= board.getRegdate() %></td>
 			<td><%= board.getCnt() %></td>
@@ -54,7 +54,7 @@
 		<% } %>
 	</table>
 	<br>
-	<a href="insertBoard.jsp">새글 등록</a>
+	<a href="insertBoard.jsp">새 글 등록</a>
 </center>
 </body>
 </html>

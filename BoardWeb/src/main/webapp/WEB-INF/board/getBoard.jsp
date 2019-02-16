@@ -27,7 +27,7 @@
 		</tr>
 		<tr>
 			<td bgcolor="orange">등록일</td>
-			<td align="left">${boad.regDate}</td>
+			<td align="left">${board.regDate}</td>
 		</tr>
 		<tr>
 			<td colspan="2" align="center">
@@ -37,7 +37,7 @@
 	</table>
 	</form>
 	<hr>
-	<a href="insertBoard.jsp">글등록</a>&nbsp;&nbsp;&nbsp;
+	<a href="../../insertBoard.jsp">글등록</a>&nbsp;&nbsp;&nbsp;
 	<a href="deleteBoard.do?seq=${board.seq}">글삭제</a>&nbsp;&nbsp;&nbsp;
 	<a href="getBoardList.do">글목록</a>
 </center>

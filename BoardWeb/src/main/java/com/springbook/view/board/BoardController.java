@@ -33,7 +33,7 @@ public class BoardController {
 	@RequestMapping("/getBoard.do")
 	public ModelAndView getBoard(BoardVO vo, BoardDAO boardDAO, ModelAndView mav) {
 		mav.addObject("board", boardDAO.getBoard(vo));	// Model 정보 저장
-		mav.setViewName("getBoard");	// View 정보 저장
+		mav.setViewName("getBoard.jsp");	// View 정보 저장
 		return mav;
 	}
 	
@@ -41,7 +41,7 @@ public class BoardController {
 	@RequestMapping("/getBoardList.do")
 	public ModelAndView getBoardList(BoardVO vo, BoardDAO boardDAO, ModelAndView mav) {
 		mav.addObject("boardList", boardDAO.getBoardList(vo));	// Model 정보 저장
-		mav.setViewName("getBoardList");	// View 정보 저장
+		mav.setViewName("getBoardList.jsp");	// View 정보 저장
 		return mav;
 	}
 }

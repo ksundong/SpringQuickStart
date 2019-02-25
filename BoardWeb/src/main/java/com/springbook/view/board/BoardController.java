@@ -4,10 +4,24 @@ import com.springbook.biz.board.BoardVO;
 import com.springbook.biz.board.Impl.BoardDAO;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
+
+import java.util.HashMap;
+import java.util.Map;
 
 @Controller
 public class BoardController {
+	// 검색 조건 목록 설정
+	@ModelAttribute("conditionMap")
+	public Map<String, String> searchConditionMap() {
+		System.out.println("conditionMap 호출됨 << BoardController에 존재하는 기능 동작시 항상 먼저 동작");
+		Map<String, String> conditionMap = new HashMap<String, String>();
+		conditionMap.put("제목", "TITLE");
+		conditionMap.put("내용", "CONTENT");
+		return conditionMap;
+	}
+	
 	// 글 등록
 	@RequestMapping(value = "/insertBoard.do")
 	public String insertBoard(BoardVO vo, BoardDAO boardDAO) {

@@ -1,4 +1,4 @@
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ page contentType="text/html;charset=UTF-8" %>
 <html>
 <head>
 	<title>새글등록</title>
@@ -8,7 +8,7 @@
 	<h1>글 등록</h1>
 	<a href="logout.do">Log-out</a>
 	<hr>
-	<form action="insertBoard.do" method="post">
+	<form action="insertBoard.do" method="post" enctype="multipart/form-data">
 		<table border="1" cellspacing="0" cellpadding="0">
 			<tr>
 				<td bgcolor="orange" width="70">제목</td>
@@ -21,6 +21,10 @@
 			<tr>
 				<td bgcolor="orange">내용</td>
 				<td align="left"><textarea name="content" cols="40" rows="10"></textarea></td>
+			</tr>
+			<tr>
+				<td bgcolor="orange" width="70">업로드</td>
+				<td align="left"><input type="file" name="uploadFile" /s></td>
 			</tr>
 			<tr>
 				<td colspan="2" align="center">

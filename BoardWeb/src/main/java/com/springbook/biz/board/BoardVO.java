@@ -1,5 +1,6 @@
 package com.springbook.biz.board;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import org.springframework.web.multipart.MultipartFile;
 
 import java.sql.Date;
@@ -51,18 +52,21 @@ public class BoardVO {
 	public void setCnt(int cnt) {
 		this.cnt = cnt;
 	}
+	@JsonIgnore
 	public String getSearchCondition() {
 		return searchCondition;
 	}
 	public void setSearchCondition(String searchCondition) {
 		this.searchCondition = searchCondition;
 	}
+	@JsonIgnore
 	public String getSearchKeyword() {
 		return searchKeyword;
 	}
 	public void setSearchKeyword(String searchKeyword) {
 		this.searchKeyword = searchKeyword;
 	}
+	@JsonIgnore
 	public MultipartFile getUploadFile() {
 		return uploadFile;
 	}
